@@ -28,11 +28,7 @@ namespace Constructors_Шаповалова.Elements
 
         private void btnsearch(object sender, RoutedEventArgs e)
         {
-            TriggerSearch();
-        }
-        private void TriggerSearch()
-        {
-            SearchRequest?.Invoke(tb_search.Text.Trim());
+            
         }
     }
 }

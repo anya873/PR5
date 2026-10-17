@@ -21,18 +21,20 @@ namespace Constructors_Шаповалова
     public partial class MainWindow : Window
     {
         public List<Classes.Student> AllStudent = Classes.RepoStudents.AllStudent();
+        private List<Classes.Student> currentDisplayList;
         public int Count = 10;
         public int Step = 0;
         public MainWindow()
         {
             InitializeComponent();
+            currentDisplayList = AllStudent;
             CreateStudent(Step, Count);
         }
         public void CreateStudent(int Step, int Count)
         {
             for(int iStudent=Step; iStudent<Step+Count;  iStudent++) 
-                if(AllStudent.Count>iStudent)
-                    parent.Children.Add(new Elements.Student(AllStudent[iStudent]));
+                if(currentDisplayList.Count>iStudent)
+                    parent.Children.Add(new Elements.Student(currentDisplayList[iStudent]));
             this.Step += Count;
         }
         private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
@@ -44,6 +46,21 @@ namespace Constructors_Шаповалова
             if(DeltaHeight - scroll.VerticalOffset < 140)
             {
                 CreateStudent(Step, Count);
+            }
+        }
+
+        private void MySearch_Loaded(object sender, RoutedEventArgs e)
+        {
+            parent.Children.Clear();
+            Step = 0;
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                currentDisplayList = AllStudent;
+            }
+            else
+            {
+                currentDisplayList = AllStudent.Where(s=>s.GetFIO().Contains(searchText, System.StringComparison.OrdinalIgnoreCase)).ToList();
+                CreateStudent(Step,Count);
             }
         }
     }
