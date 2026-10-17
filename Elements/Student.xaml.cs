@@ -23,6 +23,9 @@ namespace Constructors_Шаповалова.Elements
         public Student()
         {
             InitializeComponent();
+            tb_fio.Content = student.GetFIO();
+            tb_scholarship.Content = student.Scholarship ? "Стипендия: получает" : "Стипендия: не получает";
+            tb_course.Content = $"Курс: {student.Course}";
         }
     }
 }
