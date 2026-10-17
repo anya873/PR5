@@ -4,10 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Constructors_Шаповалова"
+        xmlns:elems="clr-namespace:Constructors_Шаповалова.Elements"
         mc:Ignorable="d"
         Title="Студенты КГАПОУ Авиатехникум" Height="450" Width="800" MinHeight="450" MinWidth="800" FontFamily="Arial Narrow">
     <Grid>
-        <ScrollViewer ScrollChanged="ScrollViewer_ScrollChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <elems:Search x:Name="MySearch" Grid.Row="0" Margin="10,10,10,10" SearchRequest="Search_SearchRequest"/>
+        <ScrollViewer ScrollChanged="ScrollViewer_ScrollChanged" Grid.Row="1">
             <StackPanel Margin="10" x:Name="parent">
                 
             </StackPanel>

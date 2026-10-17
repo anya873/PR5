@@ -13,6 +13,7 @@ namespace Constructors_Шаповалова.Classes
         public string Surname = "";
         public bool Scholarship = false;
         public int Course = 4;
+        public string image = "/Constructors_Шаповалова;component/Images/ic_user.png";
         public Student(string Firstname, string Lastname, string Surname)
         {
             this.Firstname = Firstname;
@@ -27,9 +28,17 @@ namespace Constructors_Шаповалова.Classes
         {
             this.Course = Course;
         }
+        public Student(string Firstname, string Lastname, string Surname, bool Scholaship, int Course, string image) : this(Firstname, Lastname, Surname, Scholaship, Course)
+        {
+            this.image = image;
+        }
         public string GetFIO()
         {
             return $"{Lastname} {Firstname} {Surname}";
+        }
+        public string GetImage()
+        {
+            return $"{image}";
         }
     }
 }

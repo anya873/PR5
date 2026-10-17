@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Elements\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Elements\Student.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -69,6 +73,9 @@
     </Compile>
     <Compile Include="Classes\RepoStudents.cs" />
     <Compile Include="Classes\Student.cs" />
+    <Compile Include="Elements\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Elements\Student.xaml.cs">
       <DependentUpon>Student.xaml</DependentUpon>
     </Compile>
@@ -106,6 +113,14 @@
   <ItemGroup>
     <Resource Include="Images\ic_user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\5_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\5_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\5_3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

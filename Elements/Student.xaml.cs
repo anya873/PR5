@@ -20,12 +20,14 @@ namespace Constructors_Шаповалова.Elements
     /// </summary>
     public partial class Student : UserControl
     {
-        public Student()
+        public Student(Classes.Student student)
         {
             InitializeComponent();
             tb_fio.Content = student.GetFIO();
             tb_scholarship.Content = student.Scholarship ? "Стипендия: получает" : "Стипендия: не получает";
             tb_course.Content = $"Курс: {student.Course}";
+            var imagePath = student.GetImage();
+            tb_image.Source = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
         }
     }
 }

@@ -13,9 +13,9 @@ namespace Constructors_Шаповалова.Classes
             List<Student> allStudent = new List<Student>();
             allStudent.Add(new Student("Болотов", "Евгений", "Олегович"));
             allStudent.Add(new Student("Грогорьев", "Роман", "Владимирович"));
-            allStudent.Add(new Student("Гудков", "Георгий", "Константинович", false, 3));
+            allStudent.Add(new Student("Гудков", "Георгий", "Константинович", false, 3, "/Constructors_Шаповалова;component/Images/5_2.png"));
             allStudent.Add(new Student("Исыпова", "Алёна", "Александровна", true));
-            allStudent.Add(new Student("Иутин", "Павел", "Алексеевич", false, 3));
+            allStudent.Add(new Student("Иутин", "Павел", "Алексеевич", false, 3, "/Constructors_Шаповалова;component/Images/5_3.png"));
             allStudent.Add(new Student("Ишимов", "Виктор", "Алексеевич"));
             allStudent.Add(new Student("Калюжный", "Артём", "Евгеньевич"));
             allStudent.Add(new Student("Кусакина", "Полина", "Олеговна", true));
@@ -25,7 +25,7 @@ namespace Constructors_Шаповалова.Classes
             allStudent.Add(new Student("Мокрушина", "Надежда", "Владимировна", true));
             allStudent.Add(new Student("Мугатагаров", "Даниил", "Ринатович"));
             allStudent.Add(new Student("Нарижный", "Данил", "Владленович"));
-            allStudent.Add(new Student("Никонов", "Арсений", "Дмитриевич", false, 3));
+            allStudent.Add(new Student("Никонов", "Арсений", "Дмитриевич", false, 3, "/Constructors_Шаповалова;component/Images/5_1.png"));
             allStudent.Add(new Student("Оборин", "Даниил", "Артёмович"));
             allStudent.Add(new Student("Посадских", "Дарья", "Андреевна"));
             allStudent.Add(new Student("Сторожев", "Денис", "Романович", true));
