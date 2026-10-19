@@ -30,12 +30,36 @@ namespace Constructors_Шаповалова
             currentDisplayList = AllStudent;
             CreateStudent(Step, Count);
         }
-        public void CreateStudent(int Step, int Count)
+        public void CreateStudent(int startIndex, int count)
         {
-            for(int iStudent=Step; iStudent<Step+Count;  iStudent++) 
-                if(currentDisplayList.Count>iStudent)
-                    parent.Children.Add(new Elements.Student(currentDisplayList[iStudent]));
-            this.Step += Count;
+            for (int iStudent = startIndex; iStudent < startIndex + count; iStudent++)
+            {
+                if (currentDisplayList.Count > iStudent)
+                {
+                    var studentControl = new Elements.Student(currentDisplayList[iStudent]);
+
+                    studentControl.EditRequested += StudentControl_EditRequested;
+
+                    parent.Children.Add(studentControl);
+                }
+            }
+            this.Step += count;
+        }
+        private void StudentControl_EditRequested(Classes.Student student)
+        {
+            var editWin = new EditWindow(student);
+
+            if (editWin.ShowDialog() == true)
+            {
+                RefreshDisplayList();
+            }
+        }
+
+        private void RefreshDisplayList()
+        {
+            parent.Children.Clear();
+            Step = 0;
+            CreateStudent(Step, Count);
         }
         private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
         {
@@ -49,19 +73,23 @@ namespace Constructors_Шаповалова
             }
         }
 
-        private void MySearch_Loaded(object sender, RoutedEventArgs e)
+        private void Search_SearchRequest(string searchText)
         {
             parent.Children.Clear();
             Step = 0;
+
             if (string.IsNullOrWhiteSpace(searchText))
             {
                 currentDisplayList = AllStudent;
             }
             else
             {
-                currentDisplayList = AllStudent.Where(s=>s.GetFIO().Contains(searchText, System.StringComparison.OrdinalIgnoreCase)).ToList();
-                CreateStudent(Step,Count);
+                currentDisplayList = AllStudent
+                    .Where(s => s.GetFIO().IndexOf(searchText, System.StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
             }
+
+            CreateStudent(Step, Count);
         }
     }
 }

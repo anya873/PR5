@@ -26,9 +26,10 @@ namespace Constructors_Шаповалова.Elements
             InitializeComponent();
         }
 
+
         private void btnsearch(object sender, RoutedEventArgs e)
         {
-            
+            SearchRequest?.Invoke(tb_search.Text);
         }
     }
 }

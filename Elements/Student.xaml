@@ -12,11 +12,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
         </Grid.ColumnDefinitions>
         <Image x:Name="tb_image" Height="30" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Left" Width="30" Stretch="UniformToFill" Source="/Constructors_Шаповалова;component/Images/ic_user.png"/>
         <Label x:Name="tb_fio" Content="Фамилия Имя Отчество" VerticalContentAlignment="Center" Margin="9.4,10,10.2,10" Grid.Column="1" Foreground="White" FontSize="14"/>
         <Label x:Name="tb_scholarship" Content="Стипендия: получает" VerticalContentAlignment="Center" Margin="9.8,10" Grid.Column="2" Foreground="White" FontSize="14"/>
         <Label x:Name="tb_course" Content="Курс: 4" VerticalContentAlignment="Center" Margin="9.4,10.9,9.6,10" Grid.Column="3" Foreground="White" FontSize="14"/>
+        <Button Content="Изм" Grid.Column="4" FontSize="16" Background="#35363A" Foreground="White" BorderThickness="0" Click="BtnEdit_Click"/>
         <Grid.Effect>
             <DropShadowEffect Color="Black" Direction="315" Opacity="0.7" RenderingBias="Performance" BlurRadius="5"/>
         </Grid.Effect>

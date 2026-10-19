@@ -5,13 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Constructors_Шаповалова.Elements"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="620,10,0,400">
+             d:DesignHeight="40" d:DesignWidth="800">
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="tb_search" Grid.Column="0" VerticalContentAlignment="Center" Background="Bisque"/>
-        <Button x:Name="btn_search" Grid.Column="1" Content="Найти" Background="White" Click="btnsearch"/>
+
+        <TextBox x:Name="tb_search" Grid.Column="1" VerticalContentAlignment="Center" Background="Bisque" Margin="0,0,5,0"/>
+        <Button x:Name="btn_search" Grid.Column="2" Content="Найти" Background="White" Padding="15,5" Click="btnsearch"/>
     </Grid>
 </UserControl>

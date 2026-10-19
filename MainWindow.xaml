@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <elems:Search x:Name="MySearch" Grid.Row="0" Margin="10,10,10,10" SearchRequest="Search_SearchRequest" Loaded="MySearch_Loaded"/>
+        <elems:Search x:Name="MySearch" Grid.Row="0" Margin="10,10,10,10" SearchRequest="Search_SearchRequest" />
         <ScrollViewer ScrollChanged="ScrollViewer_ScrollChanged" Grid.Row="1">
             <StackPanel Margin="10" x:Name="parent">
                 
